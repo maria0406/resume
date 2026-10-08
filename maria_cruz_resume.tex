@@ -1,0 +1,223 @@
+
+% Modified for density/compactness, Waymo GSM-tailored version
+%------------------------
+
+\documentclass[letterpaper,10.5pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Tighter margins than the original template
+\addtolength{\oddsidemargin}{-0.65in}
+\addtolength{\evensidemargin}{-0.65in}
+\addtolength{\textwidth}{1.3in}
+\addtolength{\topmargin}{-1.25in}
+\addtolength{\textheight}{1.9in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting -- tighter vertical rhythm
+\titleformat{\section}{
+  \vspace{-11pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands (condensed spacing versions)
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-3pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{0pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{0pt}\item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-2pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0pt, label={}, itemsep=0pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=1pt, topsep=2pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-3pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\vspace*{0.1in}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Maria Cruz} \\ \vspace{2pt}
+    \small \faPhone\ 346-479-3841 \ $|$ \ \faEnvelope\ \href{mailto:mariacruz@utexas.edu}{\underline{mariacruz@utexas.edu}} \ $|$ \
+    \faLinkedin\ \href{https://www.linkedin.com/in/maria-cruz-ut/}{\underline{linkedin.com/in/maria-cruz-ut}}
+\end{center}
+\vspace{-8pt}
+
+\newcommand{\resumeEducation}[5]{
+  \vspace{-3pt}\item
+  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & \\
+    \textit{\small #2} & \textit{\small #3} \\
+    \textit{\small #4} & \textit{\small #5} \\
+  \end{tabular*}\vspace{-6pt}
+}
+
+%-----------SUMMARY-----------
+\vspace{-10pt}
+\section{Summary}
+    \small{ECE and Plan II Honors junior at UT Austin (May 2028) targeting product and program management roles. Two-time Amazon intern who turned engineer pain points into requirements for a test-coverage dashboard, then led its beta and phased rollout across 20 pilot pipelines. Building a rekordbox companion app for DJs, now taking its live-coaching prototype through hardware testing.}
+    \vspace{-8pt}
+
+    %-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+
+\resumeEducation
+{University of Texas at Austin}
+{Bachelor of Science in Electrical and Computer Engineering \textbar{} Renewable Energy Systems Track}
+{May 2028}
+{Bachelor of Arts \textbar{} Plan II Honors}
+{May 2028}
+
+\vspace{1pt}
+\small \textbf{Highlighted Coursework:} Circuit Theory, Introduction to Embedded Systems, Linear Systems \& Signals, Software Design \& Implementation, Vector Calculus, Engineering Communication, Problems of Knowledge and Evaluation, Climate Change Literature\\
+
+\resumeSubHeadingListEnd
+
+%-------------------------------------------
+\vspace{-10pt}
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+{\textbf{Amazon} $|$ \emph{Software Development Engineer in Test Intern} $|$ \emph{Seattle, WA}}{\textbf{June 2026 -- Aug. 2026}}
+\resumeItemListStart
+\resumeItem{Partnered with engineers across Amazon's Global Logistics organization about test-coverage visibility gaps and translated their needs into requirements for a dashboard showing real-time line coverage and pass/fail status}
+\resumeItem{Led beta testing and a phased rollout across 20 pilot pipelines, meeting release deadlines while folding engineer feedback into each iteration}
+\resumeItem{Designed and built the dashboard with engineering stakeholders, integrating Amazon's Test Information Manager (TIM) API and storing historical runs in DynamoDB to enable cross-team trend analysis}
+\resumeItem{Delivered the tool through 42 merged code reviews across 4 packages and reviewed 6 peer code reviews}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{Amazon} $|$ \emph{Software Development Engineer Intern} $|$ \emph{Seattle, WA}}{\textbf{May 2025 -- Aug. 2025}}
+\resumeItemListStart
+\resumeItem{Built an AI agent on AWS Bedrock that lets engineers describe a data problem in plain language and get scripts that query S3 to find and fix corrupted production data}
+\resumeItem{Gathered requirements from engineers and coordinated onboarding of authenticated IAM users to the team's S3 data buckets, folding early user feedback into the access and security model}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{NASA SEES UT Center for Space Research} $|$ \emph{Student Researcher} $|$ \emph{Austin, TX}}{\textbf{June 2023 -- Dec. 2023}}
+\resumeItemListStart
+\resumeItem{Processed 219 monthly GRACE-FO satellite datasets (2002--2023) using K-Band and Laser Range Acceleration instrumentation to model polar ice mass change}
+\resumeItem{Co-authored and presented findings at the American Geophysical Union (AGU) Fall Meeting 2023}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-------------------------------------------
+\vspace{-10pt}
+\section{Projects}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+{\textbf{Automatic Root Cause Analysis} $|$ \emph{Base Power \& AITX Talent Hackathon} $|$ \emph{Austin, TX}}{\textbf{Sept. 2026}}
+\resumeItemListStart
+\resumeItem{Identified a costly workflow gap: technicians were returning non-faulty equipment after ad hoc Slack troubleshooting with engineers, wasting field time and resources}
+\resumeItem{Built a Fleet Dashboard that detects issues from live telemetry and routes diagnoses between engineers and technicians, flagging 52 distinct telemetry issues and documenting each resolution}
+%\resumeItem{Wired real fleet telemetry into a second, Austin-scoped instance of the team's diagnosis engine, fixed a data-leakage bug letting statewide data bleed into the technician view, and verified the system with 147 passing automated tests}
+\resumeItemListEnd
+\resumeProjectHeading
+{\textbf{rekordbox Companion App} $|$ \emph{Personal Project}}{\textbf{Sept. 2026 -- Present}}
+\resumeItemListStart
+\resumeItem{Built a Python companion app for Pioneer's rekordbox that analyzes local audio (tempo, beat grid, key, phrases, energy), orders DJ sets by BPM and key compatibility, and exports named transition cues back to rekordbox to speed up set prep; validated on a 12-track set with every cue imported at the exact time and name}
+\resumeItem{Designed Move Coach, an animated controller in the DDJ-FLX4's layout that shows which control to move, which way, and when, timed to bars in the song; a single timing engine drives both the animation and an in-browser audio mix, so the demo always matches what you hear}
+\resumeItem{Built a working prototype that coaches DJs live over rekordbox from the controller's MIDI, now in hardware testing, and maintained 94 automated tests}
+\resumeItemListEnd
+\resumeProjectHeading
+{\textbf{Vector Engineering Magazine} $|$ \emph{Writer} $|$ \emph{Austin, TX}}{\textbf{Aug. 2024 -- Present}}
+\resumeItemListStart
+\resumeItem{Authored an analysis of the administration's ``energy dominance'' agenda, weighing the economic and environmental tradeoffs of expanded oil and gas production against nuclear energy as a scalable, carbon-free alternative}
+\resumeItem{Distilled DOE, Nature, PBS, and AP News data into a clear tradeoff analysis for a broad audience, linking AI-driven data center power demand and the Feb. 2025 Secretarial Order to energy infrastructure risk and investment}
+\resumeItemListEnd
+
+
+\resumeSubHeadingListEnd
+\vspace{-10pt}
+\section{Leadership \& Professional Development}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+{\textbf{KBH Energy Center Student Advisory Council} $|$ \emph{Student Council Member}}{\textbf{Jan. 2026 -- Present}}
+\resumeItemListStart
+\resumeItem{Serve as a student ambassador for the KBH Energy Center, promoting energy programs and driving student engagement}
+\resumeItem{Helped organize the KBH Energy Expo and Energy Industry Symposium for 120+ students}
+\resumeItem{Facilitated connections between industry professionals and students, strengthening ties between the energy industry and campus community}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{Space City Tech} $|$ \emph{Founder} $|$ \emph{Houston, TX}}{\textbf{Dec. 2022 -- May 2024}}
+\resumeItemListStart
+\resumeItem{Founded a nonprofit delivering free computer science education to K--12 students, launching in three underserved Houston middle schools}
+\resumeItem{Directed coding camps, workshops, and scholarship initiatives reaching students across 10+ high schools}
+\resumeItem{Recruited and coordinated volunteers and community partners to scale program logistics and expand STEM access}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\vspace{-10pt}
+\section{Skills}
+\begin{itemize}[leftmargin=0pt,label={}, itemsep=0pt]
+\small{\item{
+\textbf{Product \& Program:} Requirements Gathering, Stakeholder Management, Cross-Functional Collaboration, Beta Programs \& Phased Rollouts, User Feedback Analysis, Technical Documentation, Sprint Planning, Asana \\
+\textbf{Technical:} AWS (Bedrock, S3, DynamoDB, IAM), Python, Java, C, C++, Assembly, HTML, CSS, Git, Audio Analysis, MIDI, Excel, Google Sheets, Lucidchart, KiCad, LTSpice \\
+\textbf{Certifications \& Languages:} UT Machine Shop Safety (OH 500); English (Native), Spanish (Professional)
+}}
+\end{itemize}
+
+\end{document}

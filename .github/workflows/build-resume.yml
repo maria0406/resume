@@ -1,0 +1,38 @@
+name: Build resume PDF
+
+# Compiles maria_cruz_resume.tex on every push to main and publishes the PDF
+# as the asset of a release tagged "latest". Stable link used by the portfolio:
+# https://github.com/maria0406/resume/releases/download/latest/maria_cruz_resume.pdf
+
+on:
+  push:
+    branches: [main]
+    paths: ['maria_cruz_resume.tex', '.github/workflows/build-resume.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: resume-release
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: maria_cruz_resume.tex
+
+      - name: Publish PDF to the "latest" release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Replace the asset in place so the link never 404s mid-update
+          gh release view latest >/dev/null 2>&1 || \
+            gh release create latest --title "Latest resume" --notes "Resume PDF, rebuilt on every push." --latest
+          gh release upload latest maria_cruz_resume.pdf --clobber
