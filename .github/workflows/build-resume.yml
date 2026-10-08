@@ -1,20 +1,21 @@
 name: Build resume PDF
 
-# Compiles maria_cruz_resume.tex on every push to main and publishes the PDF
-# as the asset of a release tagged "latest". Stable link used by the portfolio:
-# https://github.com/maria0406/resume/releases/download/latest/maria_cruz_resume.pdf
+# Compiles maria_cruz_resume.tex on every push to main and publishes it with
+# GitHub Pages, so it opens in the browser at a stable link used by the portfolio:
+# https://maria0406.github.io/resume/maria_cruz_resume.pdf
 
 on:
   push:
     branches: [main]
-    paths: ['maria_cruz_resume.tex', '.github/workflows/build-resume.yml']
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
-  group: resume-release
+  group: pages
   cancel-in-progress: true
 
 jobs:
@@ -28,11 +29,24 @@ jobs:
         with:
           root_file: maria_cruz_resume.tex
 
-      - name: Publish PDF to the "latest" release
-        env:
-          GH_TOKEN: ${{ github.token }}
+      - name: Assemble site
         run: |
-          # Replace the asset in place so the link never 404s mid-update
-          gh release view latest >/dev/null 2>&1 || \
-            gh release create latest --title "Latest resume" --notes "Resume PDF, rebuilt on every push." --latest
-          gh release upload latest maria_cruz_resume.pdf --clobber
+          mkdir site
+          cp maria_cruz_resume.pdf site/
+          # The bare URL opens the PDF too
+          printf '<!doctype html><meta http-equiv="refresh" content="0; url=maria_cruz_resume.pdf"><title>Maria Cruz resume</title><a href="maria_cruz_resume.pdf">Resume (PDF)</a>\n' > site/index.html
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
