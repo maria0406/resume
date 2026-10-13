@@ -16,7 +16,8 @@
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \usepackage{fontawesome5}
-\input{glyphtounicode}
+\usepackage{iftex}
+\ifPDFTeX\input{glyphtounicode}\fi
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -42,7 +43,7 @@
   \vspace{-11pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
 
-\pdfgentounicode=1
+\ifPDFTeX\pdfgentounicode=1\fi
 
 %-------------------------
 % Custom commands (condensed spacing versions)
@@ -94,7 +95,8 @@
 \begin{center}
     \textbf{\Huge \scshape Maria Cruz} \\ \vspace{2pt}
     \small \faPhone\ 346-479-3841 \ $|$ \ \faEnvelope\ \href{mailto:mariacruz@utexas.edu}{\underline{mariacruz@utexas.edu}} \ $|$ \
-    \faLinkedin\ \href{https://www.linkedin.com/in/maria-cruz-ut/}{\underline{linkedin.com/in/maria-cruz-ut}}
+    \faLinkedin\ \href{https://www.linkedin.com/in/maria-cruz-ut/}{\underline{linkedin.com/in/maria-cruz-ut}} \ $|$ \
+    \faCode\ \href{https://maria0406.github.io/portfolio/}{\underline{maria0406.github.io/portfolio}}
 \end{center}
 \vspace{-8pt}
 
@@ -110,7 +112,7 @@
 %-----------SUMMARY-----------
 \vspace{-10pt}
 \section{Summary}
-    \small{ECE and Plan II Honors junior at UT Austin (May 2028) targeting product and program management roles. Two-time Amazon intern who turned engineer pain points into requirements for a test-coverage dashboard, then led its beta and phased rollout across 20 pilot pipelines. Building a rekordbox companion app for DJs, now taking its live-coaching prototype through hardware testing.}
+    \small{ECE and Plan II Honors junior at UT Austin (May 2028) targeting project management roles. Two-time Amazon intern who turned engineer pain points into requirements for a test-coverage dashboard, then led its beta and phased rollout across 20 pilot pipelines. Building a rekordbox companion app for DJs, now taking its live-coaching prototype through hardware testing.}
     \vspace{-8pt}
 
     %-----------EDUCATION-----------
@@ -125,7 +127,7 @@
 {May 2028}
 
 \vspace{1pt}
-\small \textbf{Highlighted Coursework:} Circuit Theory, Introduction to Embedded Systems, Linear Systems \& Signals, Software Design \& Implementation, Vector Calculus, Engineering Communication, Problems of Knowledge and Evaluation, Climate Change Literature\\
+\small \textbf{Highlighted Coursework:} Circuit Theory, Introduction to Embedded Systems, Linear Systems \& Signals, Introduction to Automatic Controls, Software Design \& Implementation, Vector Calculus, Engineering Communication, Problems of Knowledge and Evaluation, Climate Change Literature\\
 
 \resumeSubHeadingListEnd
 
@@ -177,13 +179,20 @@
 \resumeItem{Built a Python companion app for Pioneer's rekordbox that analyzes local audio (tempo, beat grid, key, phrases, energy), orders DJ sets by BPM and key compatibility, and exports named transition cues back to rekordbox to speed up set prep; validated on a 12-track set with every cue imported at the exact time and name}
 \resumeItem{Designed Move Coach, an animated controller in the DDJ-FLX4's layout that shows which control to move, which way, and when, timed to bars in the song; a single timing engine drives both the animation and an in-browser audio mix, so the demo always matches what you hear}
 \resumeItem{Built a working prototype that coaches DJs live over rekordbox from the controller's MIDI, now in hardware testing, and maintained 94 automated tests}
+\resumeItem{Built an ESP32 beat-synced LED cue light (C++, FastLED, WS2812B) that pulses on the beat, follows track energy, and counts down to each transition cue; streamed timing data from the app over a custom USB serial protocol and ran a local beat clock so the light stays on time at 60 FPS}
 \resumeItemListEnd
 \resumeProjectHeading
-{\textbf{Vector Engineering Magazine} $|$ \emph{Writer} $|$ \emph{Austin, TX}}{\textbf{Aug. 2024 -- Present}}
+{\textbf{Project Sunshine} $|$ \emph{IEEE Power \& Energy Society, Power Electronics Team} $|$ \emph{Austin, TX}}{\textbf{May 2026 -- Present}}
 \resumeItemListStart
-\resumeItem{Authored an analysis of the administration's ``energy dominance'' agenda, weighing the economic and environmental tradeoffs of expanded oil and gas production against nuclear energy as a scalable, carbon-free alternative}
-\resumeItem{Distilled DOE, Nature, PBS, and AP News data into a clear tradeoff analysis for a broad audience, linking AI-driven data center power demand and the Feb. 2025 Secretarial Order to energy infrastructure risk and investment}
+\resumeItem{Designing the power electronics for a sustainable agrivoltaic solar system whose panels contract or open to let more or less sunlight reach the plants growing beneath them, adapting to the plants' needs}
+\resumeItem{Laying out the system's power electronics PCBs in KiCad}
 \resumeItemListEnd
+%\resumeProjectHeading
+%{\textbf{Vector Engineering Magazine} $|$ \emph{Writer} $|$ \emph{Austin, TX}}{\textbf{Aug. 2024 -- Present}}
+%\resumeItemListStart
+%\resumeItem{Authored an analysis of the administration's ``energy dominance'' agenda, weighing the economic and environmental tradeoffs of expanded oil and gas production against nuclear energy as a scalable, carbon-free alternative}
+%\resumeItem{Distilled DOE, Nature, PBS, and AP News data into a clear tradeoff analysis for a broad audience, linking AI-driven data center power demand and the Feb. 2025 Secretarial Order to energy infrastructure risk and investment}
+%\resumeItemListEnd
 
 
 \resumeSubHeadingListEnd
@@ -200,11 +209,10 @@
 \resumeItemListEnd
 
 \resumeProjectHeading
-{\textbf{Space City Tech} $|$ \emph{Founder} $|$ \emph{Houston, TX}}{\textbf{Dec. 2022 -- May 2024}}
+{\textbf{Longhorn Racing} $|$ \emph{Corporate Liaison} $|$ \emph{Austin, TX}}{\textbf{Aug. 2026 -- Present}}
 \resumeItemListStart
-\resumeItem{Founded a nonprofit delivering free computer science education to K--12 students, launching in three underserved Houston middle schools}
-\resumeItem{Directed coding camps, workshops, and scholarship initiatives reaching students across 10+ high schools}
-\resumeItem{Recruited and coordinated volunteers and community partners to scale program logistics and expand STEM access}
+\resumeItem{Coordinated events with sponsors to strengthen relationships and keep the team visible to industry partners}
+\resumeItem{Reached out to prospective donors and sponsors to secure funding that sustains the team's operations}
 \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -216,7 +224,7 @@
 \small{\item{
 \textbf{Product \& Program:} Requirements Gathering, Stakeholder Management, Cross-Functional Collaboration, Beta Programs \& Phased Rollouts, User Feedback Analysis, Technical Documentation, Sprint Planning, Asana \\
 \textbf{Technical:} AWS (Bedrock, S3, DynamoDB, IAM), Python, Java, C, C++, Assembly, HTML, CSS, Git, Audio Analysis, MIDI, Excel, Google Sheets, Lucidchart, KiCad, LTSpice \\
-\textbf{Certifications \& Languages:} UT Machine Shop Safety (OH 500); English (Native), Spanish (Professional)
+\textbf{Certifications \& Languages:} IBM Product Manager Professional Certificate, Spanish (Professional) 
 }}
 \end{itemize}
 
